@@ -10,26 +10,26 @@ import org.springframework.stereotype.Service;
 @Qualifier("HashMapCache")
 public class HashMapCache implements CacheService {
 
-	private Map<String, Object> cache = new ConcurrentHashMap<>();
+  private Map<String, Object> cache = new ConcurrentHashMap<>();
 
-	@Override
-	public void add(String key, Object value) {
-		cache.put(key, value);
-	}
+  @Override
+  public void add(String key, Object value) {
+    cache.put(key, value);
+  }
 
-	@Override
-	public Object get(String key) {
-		return cache.get(key);
-	}
+  @Override
+  public Object get(String key) {
+    return cache.get(key);
+  }
 
-	@Override
-	public void remove(String key) {
-		cache.remove(key);
-	}
+  @Override
+  public void remove(String key) {
+    cache.remove(key);
+  }
 
-	@Override
-	public void clear() {
-		cache.clear();
-	}
+  @Override
+  public void clear() {
+    cache.clear();
+  }
 
 }

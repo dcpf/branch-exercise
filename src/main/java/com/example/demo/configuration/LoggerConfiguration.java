@@ -10,9 +10,9 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class LoggerConfiguration {
 
-	@Bean
-	@Scope("prototype")
-	Logger logger(InjectionPoint ip) {
-		return LoggerFactory.getLogger(ip.getMember().getDeclaringClass());
-	}
+  @Bean
+  @Scope("prototype")
+  Logger logger(InjectionPoint ip) {
+    return LoggerFactory.getLogger(ip.getMember().getDeclaringClass());
+  }
 }

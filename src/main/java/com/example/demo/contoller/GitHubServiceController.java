@@ -12,16 +12,16 @@ import com.example.demo.service.github.model.GitHubUser;
 @RestController
 public class GitHubServiceController {
 
-	private final GitHubService gitHubService;
+  private final GitHubService gitHubService;
 
-	public GitHubServiceController(@Qualifier("GitHubServiceImpl") GitHubService gitHubService) {
-		this.gitHubService = gitHubService;
-	}
+  public GitHubServiceController(@Qualifier("GitHubServiceImpl") GitHubService gitHubService) {
+    this.gitHubService = gitHubService;
+  }
 
-	@GetMapping("/github/{username}")
-	@ResponseBody
-	public GitHubUser getGitHubUser(@PathVariable String username) throws Exception {
-		return gitHubService.getGitHubUser(username);
-	}
+  @GetMapping("/github/{username}")
+  @ResponseBody
+  public GitHubUser getGitHubUser(@PathVariable String username) throws Exception {
+    return gitHubService.getGitHubUser(username);
+  }
 
 }
