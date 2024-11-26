@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GitHubClientConfiguration {
-  
-  @Bean
+
+	@Bean
 	GitHub gitHubClient() throws Exception {
 		return new GitHubBuilder().build();
 	}

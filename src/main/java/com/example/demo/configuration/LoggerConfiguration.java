@@ -15,5 +15,4 @@ public class LoggerConfiguration {
 	Logger logger(InjectionPoint ip) {
 		return LoggerFactory.getLogger(ip.getMember().getDeclaringClass());
 	}
-
 }

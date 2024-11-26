@@ -13,15 +13,15 @@ import com.example.demo.model.ErrorResponse;
 @ControllerAdvice
 public class ExceptionHandler {
 
-  private final Logger logger;
+	private final Logger logger;
 
-  public ExceptionHandler(Logger logger) {
-    this.logger = logger;
-  }
+	public ExceptionHandler(Logger logger) {
+		this.logger = logger;
+	}
 
-  @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
-  public ResponseEntity<ErrorResponse> handleException(Exception e) {
-    logger.error("Error: " + e.getMessage());
-    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse(e.getMessage()));
-  }
+	@org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
+	public ResponseEntity<ErrorResponse> handleException(Exception e) {
+		logger.error("Error: " + e.getMessage());
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse(e.getMessage()));
+	}
 }
